@@ -178,12 +178,12 @@ def get_model():
 
 # set a new model and load the trained weights
 model = get_model()
-pretrained_weights = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/PretrainedModel#1.pth", map_location='cpu')
+pretrained_weights = torch.load("PretrainedModel#1.pth", map_location='cpu')
 model.load_state_dict(pretrained_weights)
 
 model.eval()
 
-test_bag = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/test_bag#1.pt")
+test_bag = torch.load("test_bag#1.pt")
 element1, *remaining_elements = test_bag  # Unpack the tuple
 
 def img_to_tensor(path):
@@ -260,7 +260,7 @@ def find_rows_cols(folder_path):
 
   return rows, cols
 
-folder_path = "/Users/prajwalrk/Desktop/code_thesis/tiles/TU58492_97 L"
+folder_path = "path to where the tiles are stored"
 rows, cols = find_rows_cols(folder_path)
 
 print(f"Number of rows: {rows}")
