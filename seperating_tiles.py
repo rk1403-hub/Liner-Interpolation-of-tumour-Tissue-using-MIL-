@@ -178,13 +178,13 @@ def get_model():
 
 # set a new model and load the trained weights
 model = get_model()
-pretrained_weights = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/PretrainedModel#1.pth", map_location='cpu')
+pretrained_weights = torch.load("PretrainedModel#1.pth", map_location='cpu')
 model.load_state_dict(pretrained_weights)
 
 model.eval()
 
 #load test batch
-test_bag = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/test_bag#1.pt")
+test_bag = torch.load("test_bag#1.pt")
 element1, *remaining_elements = test_bag  # Unpack the tuple
 
 def img_to_tensor(path):
@@ -210,9 +210,9 @@ def img_to_tensor(path):
 
     return test_bag_new
 
-folder_path = "/Users/prajwalrk/Desktop/code_thesis/tiles/7206_96_img"
-tumor_folder = "/Users/prajwalrk/Desktop/code_thesis/tumour"
-no_tumor_folder = "/Users/prajwalrk/Desktop/code_thesis/no_tumour"
+folder_path = "path where the tiles is stored"
+tumor_folder = "path to save the tumour tiles"
+no_tumor_folder = "path to save the non tumour sildes "
 
 def slides_separation(folder_path):
     os.makedirs(tumor_folder, exist_ok=True)
