@@ -180,11 +180,11 @@ if __name__ == "__main__":
 
     #set a new model and load the trained weights
     model = get_model()
-    pretrained_weights = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/PretrainedModel#1.pth", map_location='cpu')
+    pretrained_weights = torch.load("PretrainedModel#1.pth", map_location='cpu')
     model.load_state_dict(pretrained_weights)
 
     # load test batch
-    test_bag = torch.load("/Users/prajwalrk/Desktop/code_thesis/model/test_bag#1.pt")
+    test_bag = torch.load("test_bag#1.pt")
 
     #test model on test bag
     test_probs = model(test_bag)
