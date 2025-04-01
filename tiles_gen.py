@@ -9,7 +9,7 @@ import cv2
 from openslide.deepzoom import DeepZoomGenerator
 
 # Open the SVS image using Openslide
-slide = openslide.OpenSlide('/Users/prajwalrk/Downloads/CRC-dataset/TU58492_97 L.svs')
+slide = openslide.OpenSlide('path to the silde image')
 width, height = slide.dimensions
 print(width, height)
 
@@ -45,7 +45,7 @@ cols, rows = tiles.level_tiles[14]
 print(cols, rows)
 
 import os
-tile_dir = "/Users/prajwalrk/Desktop/code_thesis/tiles/TU58492_97 L"
+tile_dir = "path to store the tiles "
 
 # Check if the folder exists
 if not os.path.exists(tile_dir):
